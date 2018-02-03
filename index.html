@@ -40,7 +40,7 @@
         <script>
         var map = L.map('map', {
             zoomControl:true, maxZoom:28, minZoom:1
-        }).fitBounds([[-20.4405640362,29.9995762384],[-20.2783079928,30.2607779044]]);
+        })
         var hash = new L.Hash(map);
         map.attributionControl.addAttribution('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a>,<a href="https://www.5dgis.co.za" target="_blank">5D GIS</a>');
         var measureControl = new L.Control.Measure({
@@ -56,6 +56,9 @@
 });
         basemap0.addTo(map);
         function setBounds() {
+            if (bounds_group.getLayers().length) {
+                map.fitBounds(bounds_group.getBounds());
+            }
         }
         function pop_MineralArea_0(feature, layer) {
             var popupContent = '<table>\
@@ -93,7 +96,8 @@
         function pop_ClaimsShafts_1(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['label'] !== null ? Autolinker.link(String(feature.properties['label'])) : '') + '</td>\
+                        <th scope="row">label</th>\
+                        <td>' + (feature.properties['label'] !== null ? Autolinker.link(String(feature.properties['label'])) : '') + '</td>\
                     </tr>\
                 </table>';
             layer.bindPopup(popupContent, {maxHeight: 400});

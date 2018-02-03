@@ -16,7 +16,7 @@ var json_ClaimsShafts_1 = {
 { "type": "Feature", "properties": { "label": "BT Claims - 64 tons @ 1.88 g \/ t" }, "geometry": { "type": "Point", "coordinates": [ 30.148745594355017, -20.394212279263495 ] } },
 { "type": "Feature", "properties": { "label": "A and B Claims - 163 tons @ 1 g \/ t" }, "geometry": { "type": "Point", "coordinates": [ 30.148745594355017, -20.392817569818046 ] } },
 { "type": "Feature", "properties": { "label": "Little Sabi - 435 tons @ 5.36 g \/ t" }, "geometry": { "type": "Point", "coordinates": [ 30.132531814306834, -20.397338306306882 ] } },
-{ "type": "Feature", "properties": { "label": "Angle Shaft Sabi - 802000 tons @ 5.27 g \/ t" }, "geometry": { "type": "Point", "coordinates": [ 30.132467677518665, -20.391434871271315 ] } },
+{ "type": "Feature", "properties": { "label": "Anglo Shaft Sabi - 802000 tons @ 5.27 g \/ t" }, "geometry": { "type": "Point", "coordinates": [ 30.132467677518665, -20.391434871271315 ] } },
 { "type": "Feature", "properties": { "label": "Canada - 126070 tons @ 5.51 g \/ t" }, "geometry": { "type": "Point", "coordinates": [ 30.132429195445773, -20.385134418270816 ] } },
 { "type": "Feature", "properties": { "label": "Lemonoro - 2839 tons @ 6.04 g \/ t" }, "geometry": { "type": "Point", "coordinates": [ 30.132300921869444, -20.38915038562703 ] } },
 { "type": "Feature", "properties": { "label": "Hanky Panky - 40 tons @ 10.15 g \/ t" }, "geometry": { "type": "Point", "coordinates": [ 30.126028343986864, -20.386637412315114 ] } },
