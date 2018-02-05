@@ -35,8 +35,9 @@
         <script src="js/labels.js"></script>
         <script src="js/Control.OSMGeocoder.js"></script>
         <script src="js/leaflet-measure.js"></script>
-        <script src="data/MineralArea_0.js"></script>
-        <script src="data/ClaimsShafts_1.js"></script>
+        <script src="data/MiningLeaseArea_0.js"></script>
+        <script src="data/MiningOperations_1.js"></script>
+        <script src="data/ClaimsShafts_2.js"></script>
         <script>
         var map = L.map('map', {
             zoomControl:true, maxZoom:28, minZoom:1
@@ -60,7 +61,7 @@
                 map.fitBounds(bounds_group.getBounds());
             }
         }
-        function pop_MineralArea_0(feature, layer) {
+        function pop_MiningLeaseArea_0(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
                         <td colspan="2">' + (feature.properties['id'] !== null ? Autolinker.link(String(feature.properties['id'])) : '') + '</td>\
@@ -69,9 +70,9 @@
             layer.bindPopup(popupContent, {maxHeight: 400});
         }
 
-        function style_MineralArea_0_0() {
+        function style_MiningLeaseArea_0_0() {
             return {
-                pane: 'pane_MineralArea_0',
+                pane: 'pane_MiningLeaseArea_0',
                 opacity: 1,
                 color: 'rgba(11,248,11,1.0)',
                 dashArray: '',
@@ -82,18 +83,51 @@
                 fillColor: 'rgba(83,124,219,0.0)',
             }
         }
-        map.createPane('pane_MineralArea_0');
-        map.getPane('pane_MineralArea_0').style.zIndex = 400;
-        map.getPane('pane_MineralArea_0').style['mix-blend-mode'] = 'normal';
-    var layer_MineralArea_0 = new L.geoJson(json_MineralArea_0, {
+        map.createPane('pane_MiningLeaseArea_0');
+        map.getPane('pane_MiningLeaseArea_0').style.zIndex = 400;
+        map.getPane('pane_MiningLeaseArea_0').style['mix-blend-mode'] = 'normal';
+    var layer_MiningLeaseArea_0 = new L.geoJson(json_MiningLeaseArea_0, {
         attribution: '<a href=""></a>',
-        pane: 'pane_MineralArea_0',
-        onEachFeature: pop_MineralArea_0,
-        style: style_MineralArea_0_0,
+        pane: 'pane_MiningLeaseArea_0',
+        onEachFeature: pop_MiningLeaseArea_0,
+        style: style_MiningLeaseArea_0_0,
     });
-        bounds_group.addLayer(layer_MineralArea_0);
-        map.addLayer(layer_MineralArea_0);
-        function pop_ClaimsShafts_1(feature, layer) {
+        bounds_group.addLayer(layer_MiningLeaseArea_0);
+        map.addLayer(layer_MiningLeaseArea_0);
+        function pop_MiningOperations_1(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Label'] !== null ? Autolinker.link(String(feature.properties['Label'])) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_MiningOperations_1_0() {
+            return {
+                pane: 'pane_MiningOperations_1',
+                opacity: 1,
+                color: 'rgba(238,255,1,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 4.0, 
+                fillOpacity: 1,
+                fillColor: 'rgba(147,170,213,0.0)',
+            }
+        }
+        map.createPane('pane_MiningOperations_1');
+        map.getPane('pane_MiningOperations_1').style.zIndex = 401;
+        map.getPane('pane_MiningOperations_1').style['mix-blend-mode'] = 'normal';
+    var layer_MiningOperations_1 = new L.geoJson(json_MiningOperations_1, {
+        attribution: '<a href=""></a>',
+        pane: 'pane_MiningOperations_1',
+        onEachFeature: pop_MiningOperations_1,
+        style: style_MiningOperations_1_0,
+    });
+        bounds_group.addLayer(layer_MiningOperations_1);
+        map.addLayer(layer_MiningOperations_1);
+        function pop_ClaimsShafts_2(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
                         <th scope="row">label</th>\
@@ -103,9 +137,9 @@
             layer.bindPopup(popupContent, {maxHeight: 400});
         }
 
-        function style_ClaimsShafts_1_0() {
+        function style_ClaimsShafts_2_0() {
             return {
-                pane: 'pane_ClaimsShafts_1',
+                pane: 'pane_ClaimsShafts_2',
                 shape: 'square',
                 radius: 4.8,
                 opacity: 1,
@@ -118,23 +152,23 @@
                 fillColor: 'rgba(255,1,1,1.0)',
             }
         }
-        map.createPane('pane_ClaimsShafts_1');
-        map.getPane('pane_ClaimsShafts_1').style.zIndex = 401;
-        map.getPane('pane_ClaimsShafts_1').style['mix-blend-mode'] = 'normal';
-        var layer_ClaimsShafts_1 = new L.geoJson(json_ClaimsShafts_1, {
+        map.createPane('pane_ClaimsShafts_2');
+        map.getPane('pane_ClaimsShafts_2').style.zIndex = 402;
+        map.getPane('pane_ClaimsShafts_2').style['mix-blend-mode'] = 'normal';
+        var layer_ClaimsShafts_2 = new L.geoJson(json_ClaimsShafts_2, {
             attribution: '<a href=""></a>',
-            pane: 'pane_ClaimsShafts_1',
-            onEachFeature: pop_ClaimsShafts_1,
+            pane: 'pane_ClaimsShafts_2',
+            onEachFeature: pop_ClaimsShafts_2,
             pointToLayer: function (feature, latlng) {
                 var context = {
                     feature: feature,
                     variables: {}
                 };
-                return L.shapeMarker(latlng, style_ClaimsShafts_1_0(feature));
+                return L.shapeMarker(latlng, style_ClaimsShafts_2_0(feature));
             },
         });
-        bounds_group.addLayer(layer_ClaimsShafts_1);
-        map.addLayer(layer_ClaimsShafts_1);
+        bounds_group.addLayer(layer_ClaimsShafts_2);
+        map.addLayer(layer_ClaimsShafts_2);
         var osmGeocoder = new L.Control.OSMGeocoder({
             collapsed: false,
             position: 'topright',
@@ -142,30 +176,43 @@
         });
         osmGeocoder.addTo(map);
         var baseMaps = {};
-        L.control.layers(baseMaps,{'<img src="legend/ClaimsShafts_1.png" /> Claims/Shafts': layer_ClaimsShafts_1,'<img src="legend/MineralArea_0.png" /> Mineral Area': layer_MineralArea_0,},{collapsed:false}).addTo(map);
+        L.control.layers(baseMaps,{'<img src="legend/ClaimsShafts_2.png" /> Claims/Shafts': layer_ClaimsShafts_2,'<img src="legend/MiningOperations_1.png" /> Mining Operations': layer_MiningOperations_1,'<img src="legend/MiningLeaseArea_0.png" /> Mining Lease Area': layer_MiningLeaseArea_0,},{collapsed:false}).addTo(map);
         setBounds();
         var i = 0;
-        layer_ClaimsShafts_1.eachLayer(function(layer) {
+        layer_MiningOperations_1.eachLayer(function(layer) {
             var context = {
                 feature: layer.feature,
                 variables: {}
             };
-            layer.bindTooltip((layer.feature.properties['label'] !== null?String('<div style="color: #000000; font-size: 13pt; font-weight: bold; font-family: \'MS Shell Dlg 2\', sans-serif;">' + layer.feature.properties['label']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_ClaimsShafts_1'});
+            layer.bindTooltip((layer.feature.properties['Label'] !== null?String('<div style="color: #ffffff; font-size: 15pt; font-weight: bold; font-family: \'MS Shell Dlg 2\', sans-serif;">' + layer.feature.properties['Label']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_MiningOperations_1'});
             labels.push(layer);
             totalMarkers += 1;
               layer.added = true;
               addLabel(layer, i);
               i++;
         });
-        resetLabels([layer_ClaimsShafts_1]);
+        var i = 0;
+        layer_ClaimsShafts_2.eachLayer(function(layer) {
+            var context = {
+                feature: layer.feature,
+                variables: {}
+            };
+            layer.bindTooltip((layer.feature.properties['label'] !== null?String('<div style="color: #ffffff; font-size: 15pt; font-weight: bold; font-family: \'MS Shell Dlg 2\', sans-serif;">' + layer.feature.properties['label']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_ClaimsShafts_2'});
+            labels.push(layer);
+            totalMarkers += 1;
+              layer.added = true;
+              addLabel(layer, i);
+              i++;
+        });
+        resetLabels([layer_MiningOperations_1,layer_ClaimsShafts_2]);
         map.on("zoomend", function(){
-            resetLabels([layer_ClaimsShafts_1]);
+            resetLabels([layer_MiningOperations_1,layer_ClaimsShafts_2]);
         });
         map.on("layeradd", function(){
-            resetLabels([layer_ClaimsShafts_1]);
+            resetLabels([layer_MiningOperations_1,layer_ClaimsShafts_2]);
         });
         map.on("layerremove", function(){
-            resetLabels([layer_ClaimsShafts_1]);
+            resetLabels([layer_MiningOperations_1,layer_ClaimsShafts_2]);
         });
         </script>
     </body>
